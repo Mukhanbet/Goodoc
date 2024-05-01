@@ -8,9 +8,13 @@ services:
       - 'POSTGRES_USER=postgres'
       - 'POSTGRES_PASSWORD=Azimbaev2004'
       - 'POSTGRES_DB=Goodoc'
+    ports:
+      - "5432:5432"
 
   app:
     build: ./
     container_name: 'Goodoc-Application'
     ports:
       - "8080:8080"
+    depends_on:
+      - postgres
