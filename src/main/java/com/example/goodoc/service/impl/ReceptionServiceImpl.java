@@ -18,6 +18,7 @@ import java.util.List;
 public class ReceptionServiceImpl implements ReceptionService {
     private final ReceptionRepository receptionRepository;
     private final ReceptionMapper receptionMapper;
+
     @Override
     public List<ReceptionResponse> all() {
         return receptionMapper.toDtoS(receptionRepository.findAll());
@@ -25,13 +26,13 @@ public class ReceptionServiceImpl implements ReceptionService {
 
     @Override
     public ReceptionResponse findById(Long id) {
-        return receptionMapper.toDto(receptionRepository.findById(id).orElseThrow(() -> new CustomException("Reception is not found!", HttpStatus.NOT_FOUND))) ;
+        return receptionMapper.toDto(receptionRepository.findById(id).orElseThrow(() -> new CustomException("Reception is not found!", HttpStatus.NOT_FOUND)));
     }
 
     @Override
     public void updateById(Long id, ReceptionRequest receptionRequest) {
         Reception reception = receptionRepository.findById(id).orElseThrow(() -> new CustomException("Reception is not found!", HttpStatus.NOT_FOUND));
-        if(receptionRepository.findByName(receptionRequest.getName()).isEmpty()) {
+        if (receptionRepository.findByName(receptionRequest.getName()).isEmpty()) {
             receptionRepository.save(receptionMapper.toDtoReception(reception, receptionRequest));
         } else {
             throw new CustomException("Reception with this name is already exist", HttpStatus.BAD_REQUEST);
@@ -46,7 +47,7 @@ public class ReceptionServiceImpl implements ReceptionService {
 
     @Override
     public void create(ReceptionRequest request) {
-        if(receptionRepository.findByName(request.getName()).isEmpty()) {
+        if (receptionRepository.findByName(request.getName()).isEmpty()) {
             receptionRepository.save(receptionMapper.toDtoReception(new Reception(), request));
         } else {
             throw new CustomException("Reception with this name is already exist", HttpStatus.BAD_REQUEST);

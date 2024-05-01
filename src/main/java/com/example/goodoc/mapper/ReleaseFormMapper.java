@@ -8,6 +8,8 @@ import java.util.List;
 
 public interface ReleaseFormMapper {
     ReleaseFormResponse toDto(ReleaseForm releaseForm);
+
     List<ReleaseFormResponse> toDtoS(List<ReleaseForm> releaseForms);
+
     ReleaseForm toDtoReleaseForm(ReleaseForm releaseForm, ReleaseFormRequest request);
 }

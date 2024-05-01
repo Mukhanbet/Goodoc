@@ -8,6 +8,8 @@ import java.util.List;
 
 public interface MedicineMapper {
     MedicineResponse toDto(Medicine medicine);
+
     List<MedicineResponse> toDtoS(List<Medicine> medicineList);
+
     Medicine toDtoMedicine(Medicine medicine, MedicineRequest medicineRequest);
 }

@@ -1,6 +1,5 @@
 package com.example.goodoc.controller;
 
-import com.example.goodoc.dto.reception.ReceptionRequest;
 import com.example.goodoc.dto.releaseForm.ReleaseFormRequest;
 import com.example.goodoc.dto.releaseForm.ReleaseFormResponse;
 import com.example.goodoc.service.ReleaseFormService;
@@ -12,6 +11,7 @@ import java.util.List;
 @RestController
 @AllArgsConstructor
 @RequestMapping("/releaseForm")
+@CrossOrigin(origins = "*", maxAge = 3600)
 public class ReleaseFormController {
     private final ReleaseFormService releaseFormService;
 

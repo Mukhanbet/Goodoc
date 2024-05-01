@@ -32,7 +32,7 @@ public class ReleaseFormServiceImpl implements ReleaseFormService {
     @Override
     public void updateById(Long id, ReleaseFormRequest request) {
         ReleaseForm releaseForm = releaseFormRepository.findById(id).orElseThrow(() -> new CustomException("Release form is not found", HttpStatus.NOT_FOUND));
-        if(releaseFormRepository.findByName(request.getName()).isEmpty()) {
+        if (releaseFormRepository.findByName(request.getName()).isEmpty()) {
             releaseFormRepository.save(releaseFormMapper.toDtoReleaseForm(releaseForm, request));
         } else {
             throw new CustomException("Release form with this name is already exist", HttpStatus.BAD_REQUEST);
@@ -48,7 +48,7 @@ public class ReleaseFormServiceImpl implements ReleaseFormService {
 
     @Override
     public void create(ReleaseFormRequest request) {
-        if(releaseFormRepository.findByName(request.getName()).isEmpty()) {
+        if (releaseFormRepository.findByName(request.getName()).isEmpty()) {
             releaseFormRepository.save(releaseFormMapper.toDtoReleaseForm(new ReleaseForm(), request));
         } else {
             throw new CustomException("Release with this name is already exist", HttpStatus.BAD_REQUEST);

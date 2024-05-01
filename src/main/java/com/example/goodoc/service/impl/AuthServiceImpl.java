@@ -20,12 +20,13 @@ public class AuthServiceImpl implements AuthService {
     private final UserRepository userRepository;
     private final AuthMapper authMapper;
     private final AuthenticationManager authenticationManager;
+
     @Override
     public AuthResponse register(AuthRegisterRequest authRegisterRequest) {
-        if(!authRegisterRequest.getPassword().equals(authRegisterRequest.getConfirmPassword())) {
+        if (!authRegisterRequest.getPassword().equals(authRegisterRequest.getConfirmPassword())) {
             throw new CustomException("Password is not same", HttpStatus.BAD_REQUEST);
         }
-        if(userRepository.findByNumber(authRegisterRequest.getNumber()).isPresent()) {
+        if (userRepository.findByNumber(authRegisterRequest.getNumber()).isPresent()) {
             throw new CustomException("User is found", HttpStatus.FOUND);
         }
         User user = authMapper.toDtoUser(authRegisterRequest);

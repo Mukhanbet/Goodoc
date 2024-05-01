@@ -1,13 +1,6 @@
 package com.example.goodoc.dto.medicine;
 
-import com.example.goodoc.model.Reception;
-import com.example.goodoc.model.ReleaseForm;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
 import lombok.Data;
-
-import java.time.LocalDate;
-import java.time.LocalTime;
 
 @Data
 public class MedicineRequest {

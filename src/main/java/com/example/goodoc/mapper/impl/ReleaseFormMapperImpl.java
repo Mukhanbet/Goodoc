@@ -23,7 +23,7 @@ public class ReleaseFormMapperImpl implements ReleaseFormMapper {
     @Override
     public List<ReleaseFormResponse> toDtoS(List<ReleaseForm> releaseForms) {
         List<ReleaseFormResponse> releaseFormResponses = new ArrayList<>();
-        for(ReleaseForm releaseForm : releaseForms) {
+        for (ReleaseForm releaseForm : releaseForms) {
             releaseFormResponses.add(toDto(releaseForm));
         }
         return releaseFormResponses;

@@ -20,14 +20,13 @@ import java.util.Map;
 @RequiredArgsConstructor
 @Slf4j
 @RequestMapping("/bot")
+@CrossOrigin(origins = "*", maxAge = 3600)
 public class BotController {
+    private final RestTemplate template;
     @Value("${openai.model}")
     private String modelName;
-
     @Value("${openai.api.url}")
     private String apiURL;
-
-    private final RestTemplate template;
 
     @GetMapping("/chat")
     @ResponseBody

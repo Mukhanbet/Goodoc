@@ -23,7 +23,7 @@ public class UserMapperImpl implements UserMapper {
     @Override
     public List<UserResponse> toDtoS(List<User> userList) {
         List<UserResponse> userResponses = new ArrayList<>();
-        for(User user : userList) {
+        for (User user : userList) {
             userResponses.add(toDto(user));
         }
         return userResponses;

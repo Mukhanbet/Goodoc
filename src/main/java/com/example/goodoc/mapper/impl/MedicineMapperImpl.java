@@ -33,7 +33,7 @@ public class MedicineMapperImpl implements MedicineMapper {
     @Override
     public List<MedicineResponse> toDtoS(List<Medicine> medicineList) {
         List<MedicineResponse> medicineResponses = new ArrayList<>();
-        for(Medicine medicine : medicineList) {
+        for (Medicine medicine : medicineList) {
             medicineResponses.add(toDto(medicine));
         }
         return medicineResponses;

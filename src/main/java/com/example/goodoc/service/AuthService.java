@@ -6,5 +6,6 @@ import com.example.goodoc.dto.auth.AuthResponse;
 
 public interface AuthService {
     AuthResponse register(AuthRegisterRequest authRegisterRequest);
+
     AuthResponse login(AuthLoginRequest authLoginRequest);
 }

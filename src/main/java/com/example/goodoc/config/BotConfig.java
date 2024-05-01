@@ -9,6 +9,7 @@ import org.springframework.web.client.RestTemplate;
 public class BotConfig {
     @Value("${openai.api.key}")
     private String openaiApiKey;
+
     @Bean
     public RestTemplate template() {
         RestTemplate restTemplate = new RestTemplate();

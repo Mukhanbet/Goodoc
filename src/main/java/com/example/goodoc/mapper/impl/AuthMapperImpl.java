@@ -15,6 +15,7 @@ import org.springframework.stereotype.Component;
 public class AuthMapperImpl implements AuthMapper {
     private final JwtService jwtService;
     private final PasswordEncoder encoder;
+
     @Override
     public AuthResponse toDto(User user) {
         AuthResponse authResponse = new AuthResponse();

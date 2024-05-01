@@ -8,6 +8,8 @@ import java.util.List;
 
 public interface ReceptionMapper {
     ReceptionResponse toDto(Reception reception);
+
     List<ReceptionResponse> toDtoS(List<Reception> receptions);
+
     Reception toDtoReception(Reception reception, ReceptionRequest receptionRequest);
 }

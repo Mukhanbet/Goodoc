@@ -24,6 +24,7 @@ public class MedicineServiceImpl implements MedicineService {
     private final MedicineMapper medicineMapper;
     private final ReceptionRepository receptionRepository;
     private final ReleaseFormRepository releaseFormRepository;
+
     @Override
     public List<MedicineResponse> all() {
         return medicineMapper.toDtoS(medicineRepository.findAll());

@@ -22,7 +22,7 @@ public class ReceptionMapperImpl implements ReceptionMapper {
     @Override
     public List<ReceptionResponse> toDtoS(List<Reception> receptions) {
         List<ReceptionResponse> receptionResponses = new ArrayList<>();
-        for(Reception reception : receptions) {
+        for (Reception reception : receptions) {
             receptionResponses.add(toDto(reception));
         }
         return receptionResponses;
