@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  postgres:
+    image: 'postgres:16.1'
+    container_name: 'Goodoc-Postgres'
+    environment:
+      - 'POSTGRES_USER=postgres'
+      - 'POSTGRES_PASSWORD=Azimbaev2004'
+      - 'POSTGRES_DB=Goodoc'
+
+  app:
+    build: ./
+    container_name: 'Goodoc-Application'
+    ports:
+      - "8080:8080"
