@@ -17,7 +17,7 @@ GOODOC is a medication management app designed to help users manage their medica
 
 ## Features
 
-- **Medication Reminders:** Set up notifications to remind you to take your medications on time.
+- **Medication Reminders:** Set up notifications to remind you to take your medications on the time.
 - **Onboarding Screens:** Learn how to use the app with simple step-by-step instructions.
 - **User Authentication:** Secure login and registration system to protect your information.
 - **Medication Tracking:** Add and manage your medications with options for dosage, frequency, and timing.
